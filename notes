@@ -1,0 +1,3 @@
+needed packages:
+	splinter (which will auto install selenium)
+	requests
