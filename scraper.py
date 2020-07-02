@@ -63,7 +63,7 @@ for row in tracklist:
 
     # make search query for yt search and filename, print in terminal
     query = str(song + " - " + artist)
-    query = re.sub('[/]', '', query)
+    query = re.sub(r'[/]', '', query)    # have to eliminate '/'
     print(query)
 
     # paste query in yt search bar, click 'search', wait
@@ -91,7 +91,7 @@ for row in tracklist:
     r = requests.get(str(buttons[0]['href']))
 
     # create file in directory, write data to it, wait
-    file = directory + query
+    file = directory + query + ".mp3"
     open(file, 'wb').write(r.content)
     time.sleep(5)
 
